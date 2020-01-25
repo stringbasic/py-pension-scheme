@@ -18,4 +18,4 @@ class Member:
         self.status = status
 
     def __str__(self):
-        return self.name + ' (' + self.birthdate + ')'
+        return self.name + ' (' + self.birthdate.isoformat() + ')'
