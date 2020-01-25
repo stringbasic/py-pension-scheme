@@ -35,8 +35,14 @@ class Member:
     def normal_retirement_date(self):
         return date(self.birthdate.year+self.nra(), self.birthdate.month, self.birthdate.day)
     
+    def age_at_valuation_date(self):
+        return relativedelta(self.valuation_date(),self.birthdate)
+    
     def pensionable_service(self):
         return relativedelta(self.valuation_date(),self.pensionable_service_date)
     
     def future_service(self):
+        return relativedelta(self.normal_retirement_date(),self.valuation_date())
+    
+    def total_service(self):
         return relativedelta(self.normal_retirement_date(),self.pensionable_service_date)
