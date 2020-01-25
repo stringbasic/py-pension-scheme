@@ -1,3 +1,6 @@
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
 class Member:
     def __init__(
         self,
@@ -19,3 +22,25 @@ class Member:
 
     def __str__(self):
         return self.name + ' (' + self.birthdate.isoformat() + ')'
+    
+    def month_salary(self):
+        return self.salary/12
+
+    def nra(self):
+        return 65
+    
+    def valuation_date(self):
+        return date(2019,12,31)
+        
+    def normal_retirement_date(self):
+        return date(self.birthdate.year+self.nra(), self.birthdate.month, self.birthdate.day)
+    
+    def pensionable_service(self):
+        return relativedelta(self.valuation_date(),self.pensionable_service_date)
+    
+    def future_service(self):
+        return relativedelta(self.normal_retirement_date(),self.pensionable_service_date)
+    
+ 
+    
+    
