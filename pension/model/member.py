@@ -40,7 +40,3 @@ class Member:
     
     def future_service(self):
         return relativedelta(self.normal_retirement_date(),self.pensionable_service_date)
-    
- 
-    
-    
