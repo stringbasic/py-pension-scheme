@@ -13,7 +13,7 @@ class Member:
         self.birthdate = birthdate
         self.hire_date = hire_date
         self.membership_date = membership_date
-        self.pensinoable_service_date = pensionable_service_date
+        self.pensionable_service_date = pensionable_service_date
         self.salary = salary
         self.status = status
 
