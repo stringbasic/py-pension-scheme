@@ -25,24 +25,18 @@ class Member:
     
     def month_salary(self):
         return self.salary/12
-
-    def nra(self):
-        return 65
+       
+    def normal_retirement_date(self, nra):
+        return date(self.birthdate.year+nra, self.birthdate.month, self.birthdate.day)
     
-    def valuation_date(self):
-        return date(2019,12,31)
-        
-    def normal_retirement_date(self):
-        return date(self.birthdate.year+self.nra(), self.birthdate.month, self.birthdate.day)
+    def age_at_valuation_date(self, valuation_date):
+        return relativedelta(valuation_date,self.birthdate)
     
-    def age_at_valuation_date(self):
-        return relativedelta(self.valuation_date(),self.birthdate)
+    def pensionable_service(self, valuation_date):
+        return relativedelta(valuation_date,self.pensionable_service_date)
     
-    def pensionable_service(self):
-        return relativedelta(self.valuation_date(),self.pensionable_service_date)
+    def future_service(self, nra, valuation_date):
+        return relativedelta(self.normal_retirement_date(nra),valuation_date)
     
-    def future_service(self):
-        return relativedelta(self.normal_retirement_date(),self.valuation_date())
-    
-    def total_service(self):
-        return relativedelta(self.normal_retirement_date(),self.pensionable_service_date)
+    def total_service(self, nra):
+        return relativedelta(self.normal_retirement_date(nra),self.pensionable_service_date)
