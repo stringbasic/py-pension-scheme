@@ -1,2 +1,2 @@
-name;birthdate;hire_date;membership_date;pensioable_service_date;salary;status
+name;birthdate;hire_date;membership_date;pensionable_service_date;salary;status
 Mary Smith;1973-04-20;1993-02-15;1994-02-15;1994-02-15;40000;active
