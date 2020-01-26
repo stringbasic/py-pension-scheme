@@ -10,3 +10,6 @@ To generate pension reports run:
 
 Install requirements:
 `pip install -r requirements.txt`
+
+Run tests:
+`python -m unittest`
