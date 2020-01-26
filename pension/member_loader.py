@@ -13,7 +13,8 @@ def load_csv(file_path):
                 date.fromisoformat(row['membership_date']),
                 date.fromisoformat(row['pensionable_service_date']),
                 float(row['salary']),
-                row['status']
+                row['status'],
+                row['gender']
             )
         )
     return members
