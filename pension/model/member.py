@@ -37,6 +37,9 @@ class Member:
     def pensionable_service(self, valuation_date):
         return relativedelta(valuation_date,self.pensionable_service_date)
     
+    def member_service(self, valuation_date):
+        return relativedelta(valuation_date,self.membership_date)
+    
     def prospective_service(self, nra, valuation_date):
         return relativedelta(self.normal_retirement_date(nra),valuation_date)
     
@@ -59,5 +62,14 @@ class Member:
         elif self.birthdate>date(1978, 4, 6):
             state_pension_age=68
         return state_pension_age
+    
+    def pre97_service(self):
+        if self.membership_date>date(1997,4,6):
+            pre97_service=relativedelta()
+        else:
+            pre97_service=relativedelta(date(1997,4,6),self.membership_date)
+        return pre97_service
+    
+    
             
     
