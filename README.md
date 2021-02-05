@@ -5,6 +5,14 @@
 # py-pension-scheme
 Pension scheme sample in Python
 
+Minimum Python version required: 3.7
+
+Launch Jupyter Notebook with:
+```
+jupyter notebook
+```
+and open [member\_details](member_details.ipynb).
+
 To generate pension reports run:
 `python -m pension`
 
