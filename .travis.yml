@@ -8,4 +8,4 @@ install:
   - pip install -r requirements.txt
   - pip install notebook
 
-script: jupyter nbconvert --execute *.ipynb && python -m pension && python -m unittest
+script: jupyter nbconvert --execute --to html *.ipynb && python -m pension && python -m unittest
