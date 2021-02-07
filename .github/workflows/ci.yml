@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install notebook
+
+      - name: Run tests
+        run : |
+          python -m pension
+          python -m unittest
+
+      - name: Generate notebook
+        run: |
+          jupyter nbconvert --execute --to html *.ipynb
