@@ -46,3 +46,4 @@ jobs:
         with:
           name: member_details
           path: member_details.html
+          retention-days: 2
