@@ -40,3 +40,9 @@ jobs:
       - name: Generate notebook
         run: |
           jupyter nbconvert --execute --to html *.ipynb
+
+      - name: Upload result
+        - uses: actions/upload-artifact@v2
+          with:
+            name: member_details
+            path: member_details.html
