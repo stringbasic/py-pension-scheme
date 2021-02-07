@@ -1,0 +1,49 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install notebook
+
+      - name: Run tests
+        run : |
+          python -m pension
+          python -m unittest
+
+      - name: Generate notebook
+        run: |
+          jupyter nbconvert --execute --to html *.ipynb
+
+      - name: Upload result
+        uses: actions/upload-artifact@v2
+        with:
+          name: member_details
+          path: member_details.html
+          retention-days: 2

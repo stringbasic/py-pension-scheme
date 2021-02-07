@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/stringbasic/py-pension-scheme.svg?branch=master)](https://travis-ci.org/stringbasic/py-pension-scheme)
+[![Build Status](https://github.com/stringbasic/py-pension-scheme/workflows/CI/badge.svg)](https://github.com/stringbasic/py-pension-scheme/actions)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/stringbasic/py-pension-scheme.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/stringbasic/py-pension-scheme/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/stringbasic/py-pension-scheme.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/stringbasic/py-pension-scheme/context:python)
 

@@ -1,5 +1,4 @@
 from datetime import date
-from dateutil.relativedelta import relativedelta
 from pension.helper_functions import year_fractional_diff
 
 class Member:
